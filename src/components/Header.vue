@@ -7,11 +7,11 @@
 	</header>
 </template>
 <script type="text/javascript">
-	export default {
-		data(){
-			return {
-				head:'this is header aaa'
-			}
-		}
-	}
+  export default {
+    data() {
+      return {
+        head: 'this is header aaa'
+      };
+    } 
+  };
 </script>

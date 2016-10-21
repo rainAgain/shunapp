@@ -9,7 +9,7 @@
 <template>
 	<div class="main">
 		<div class="nav">
-			
+
 			{{content}}
 		</div>
 		<div class="clear">
@@ -21,18 +21,18 @@
 </template>
 <script type="text/javascript">
 
-import MainLeft from './main-left.vue'
-import MainRight from './main-right.vue'
+import MainLeft from './main-left.vue';
+import MainRight from './main-right.vue';
 
-	export default {
-		components:{
-			MainLeft,
-			MainRight
-		},
-		data(){
-			return {
-				content:'this is main content'
-			}
-		}
-	}
+export default {
+  components: {
+    MainLeft,
+    MainRight
+  },
+  data() {
+    return {
+      content: 'this is main content'
+    };
+  }
+};
 </script>

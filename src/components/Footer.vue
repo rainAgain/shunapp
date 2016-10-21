@@ -7,21 +7,21 @@
 	</footer>
 </template>
 <script type="text/javascript">
-	export default {
-		data(){
-			return {
-				footer:'this is footer'
-			}
-		},
-		methods:{
-			get:function(){
-				console.log('调用get方法');
-			}
-		},
-		ready(){
-			console.log('加载ready方法');
-			console.log(this.footer)
-			this.get();
-		}
-	}
+  export default {
+    data() {
+      return {
+        footer: 'this is footer'
+      };
+    },
+    methods: {
+      get: function() {
+        console.log('调用get方法');
+      }
+    },
+    ready() {
+      console.log('加载ready方法');
+      console.log(this.footer);
+      this.get();
+    }
+  };
 </script>
