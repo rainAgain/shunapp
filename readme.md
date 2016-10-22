@@ -8,5 +8,3 @@ vue + webpack 的基础打包demo
 <!-- 以下是提示 -->
 
 (1)package.json中 --host 127.0.0.1 --port 9090可以设置域名和端口
-
-

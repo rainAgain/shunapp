@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import ComHeader from './Header.vue';
-  import ComFooter from './Footer.vue';
-  import ComMain from './Main.vue' ;
+  import ComHeader from '../components/Header.vue';
+  import ComFooter from '../components/Footer.vue';
+  import ComMain from '../components/Main.vue' ;
   export default {
     components: {/*
   		ComponentA,
