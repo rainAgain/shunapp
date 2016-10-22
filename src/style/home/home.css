@@ -1,0 +1,22 @@
+.home {
+  font-size: 20Px;
+  width: 750px;
+  .left {
+    width: 100px;
+    height: 600px;
+    background: gray;
+    float: left;
+  }
+  .main {
+    width: 550px;
+    height: 600px;
+    background: blue;
+    float: left;
+  }
+  .right {
+    width: 100px;
+    height: 600px;
+    background: red;
+    float: left;
+  }
+}

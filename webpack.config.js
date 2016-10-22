@@ -26,6 +26,9 @@ module.exports = {
 	},
 	resolve:{
 		extensions:['','.js','.vue','html'],
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
 	},
   vue: {
     postcss: [precss, pxtorem] // use custom postcss plugins
