@@ -2,7 +2,7 @@
 
 <template lang="html">
   <div class="home">
-    <div class="left">
+    <div class="left" @click="leftClick">
       left
     </div>
     <div class="main">
@@ -17,11 +17,21 @@
 <script>
 export default {
   data () {
-    return {}
+    return {};
   },
   computed: {},
   mounted () {},
-  methods: {},
+  methods: {
+    leftClick () {
+      const opts = {
+        url: 'https://cnodejs.org/api/v1/topics',
+        method: 'GET'
+      };
+      this.$store.dispatch('fetchApi', opts).then(() => {
+        console.log('fetch success');
+      });
+    }
+  },
   components: {}
-}
+};
 </script>
