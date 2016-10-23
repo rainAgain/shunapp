@@ -1,4 +1,5 @@
-require('es6-promise').polyfill();//es6 promise
+require('es6-promise').polyfill();  //es6 promise
+require('isomorphic-fetch');  //fetch
 
 import 'lib-flexible'; //flexible 布局
 import Vue from 'vue';

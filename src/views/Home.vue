@@ -30,6 +30,8 @@ export default {
       this.$store.dispatch('fetchApi', opts).then(() => {
         console.log('fetch success');
       });
+
+      this.$store.dispatch('increaseCount', 4);
     }
   },
   components: {}

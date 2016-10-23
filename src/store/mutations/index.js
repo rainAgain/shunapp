@@ -1,9 +1,7 @@
-export default {
-  FETCH_SUCCESS (state, data) {
-    state.pageData = data;
-  },
+import * as fetchApi from './fetchApi/index.js';
+import * as home from './home/index.js';
 
-  FETCH_FAIL (state, data) {
-    state.pageData = data;
-  }
+export default {
+  ...fetchApi,
+  ...home
 };

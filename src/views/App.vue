@@ -1,6 +1,4 @@
-<style lang="css">
-  @import '../style/common/preset.css';
-</style>
+<style lang="css" src="../style/common/preset.css"></style>
 
 <template lang="html">
   <div id="app">

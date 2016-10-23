@@ -2,13 +2,14 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
 
-import * as actions from './actions/index.js';
+import actions from './actions/index.js';
 import mutations from './mutations/index.js';
 
 Vue.use(Vuex);
 
 const state = {
   currentRoute: '/',
+  count: 0,
   pageData: {}
 };
 
