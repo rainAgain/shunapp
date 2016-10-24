@@ -4,7 +4,10 @@
   <div class="home">
     <left-sidebar></left-sidebar>
     <div class="main">
-      main
+      count: {{count}}
+      <div class="">
+        <button @click="changeCount">clickme</button>
+      </div>
     </div>
     <div class="right">
       right
@@ -14,11 +17,17 @@
 
 <script>
   import LeftSidebar from '../components/home/leftSidebar.vue';
+  import { mapGetters } from 'vuex';
+
   export default {
     data () {
       return {};
     },
-    computed: {},
+    computed: {
+      ...mapGetters([
+        'count'
+      ])
+    },
     mounted () {},
     methods: {
       leftClick () {
@@ -29,7 +38,8 @@
         this.$store.dispatch('fetchApi', opts).then(() => {
           console.log('fetch success');
         });
-
+      },
+      changeCount () {
         this.$store.dispatch('increaseCount', 4);
       }
     },

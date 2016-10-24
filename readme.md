@@ -29,7 +29,7 @@ export default [
 ];
 ```
 
-#### 添加action，mutations来修改store
+#### 如何添加action，mutations来修改store？
 
 * 修改`src/store/index.js`中的state，添加想要缓存修改的值，比如叫count
 
@@ -109,6 +109,56 @@ methods: {
   }
 }
 ```
+
+#### 如何使用store的值?
+
+* 修改`src/store/getters/index.js`添加函数，来获取你要的值
+
+  ```javascript
+  export const currentRoute = (state) => {
+    return state.currentRoute;
+  };
+
+  export const count = (state) => {	//新增加的
+    //do something alse with state
+    return state.count; 	//or return state.count+1;
+  };
+
+  export const pageData = (state) => {
+    return state.pageData;
+  };
+  ```
+
+* 在组件中使用
+
+  ```vue
+  <template lang="html">
+    <div class="main">
+      count: {{count}}
+      <div class="">
+        <button @click="leftClick">clickme</button>
+      </div>
+    </div>
+  </template>
+  <script>
+    import { mapGetters } from 'vuex';
+
+    export default {
+      computed: {
+        ...mapGetters([
+          'count'
+        ])
+      },
+      methods: {
+        leftClick () {
+          this.$store.dispatch('increaseCount', 4);
+        }
+      }
+    };
+  </script>
+  ```
+
+  ​
 
 #### 文件规范
 
