@@ -1,22 +1,4 @@
-<!--<style lang="css" src="../style/home/home.css"></style>-->
-<style scoped>
-  .home {
-    font-size: 20Px;
-    width: 750px;
-    .main {
-      width: 550px;
-      height: 600px;
-      background: lightblue;
-      float: left;
-    }
-    .right {
-      width: 100px;
-      height: 600px;
-      background: lightpink;
-      float: left;
-    }
-  }
-</style>
+<style lang="css" src="../style/home/home.css"></style>
 
 <template lang="html">
   <div class="home">
@@ -31,7 +13,7 @@
 </template>
 
 <script>
-  import LeftSidebar from './leftSidebar.vue'
+  import LeftSidebar from '../components/home/leftSidebar.vue';
   export default {
     data () {
       return {};
@@ -54,5 +36,5 @@
     components: {
       LeftSidebar
     }
-  }
+  };
 </script>

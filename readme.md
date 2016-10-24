@@ -110,6 +110,13 @@ methods: {
 }
 ```
 
+#### 文件规范
+
+* 遵循每个view在其他文件夹都有对应的 文件夹 e.g. `Home.vue`对应其他`home`文件夹，所有相关的文件都在对应的文件下
+* 通用文件，放在对应的common文件夹下
+
+
+
 vue + webpack 的基础打包demo
 
 1、npm(cnpm) install

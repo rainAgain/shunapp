@@ -1,0 +1,26 @@
+@import '../common/variables.css';
+@import '../common/mixins.css';
+
+.home {
+  font-size: 20Px;
+  width: 750px;
+  .main {
+    width: 550px;
+    height: 600px;
+    background: lightblue;
+    float: left;
+  }
+  .right {
+    @mixin clear-fix;
+    width: 100px;
+    height: 600px;
+    background: lightpink;
+    float: left;
+  }
+  .left-sidebar{
+    width: 100px;
+    height: 600px;
+    background: $blue;
+    float: left;
+  }
+}
