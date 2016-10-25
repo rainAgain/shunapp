@@ -10,6 +10,7 @@ var pxtorem = require('postcss-pxtorem')({
 //开发环境配置
 var config = {
   debug: true,
+  watch: true,
   devtool: 'cheap-module-eval-source-map',
   plugins: [
     //生成html插件
@@ -29,6 +30,7 @@ var config = {
 
 if (process.env.NODE_ENV === 'pro') { //生产环境
   config.debug = false;
+  config.watch = false;
   config.devtool = 'cheap-module-source-map';
   //添加混淆插件
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({
@@ -41,7 +43,7 @@ if (process.env.NODE_ENV === 'pro') { //生产环境
 
 module.exports = {
 	entry: {
-    vendor: ['lib-flexible', 'vue', 'vue-router', 'vuex'],  //提出来，作为一个单独文件
+    vendor: ['lib-flexible', 'es6-promise', 'vue', 'vue-router', 'vuex'],  //提出来，作为一个单独文件
     main: './src/main.js' //入口
   },
 	//编译打包后的输出
@@ -71,5 +73,5 @@ module.exports = {
     postcss: [precss, pxtorem] // use custom postcss plugins
   },
 	plugins: config.plugins,
-	watch: true //观察者模式每次修改保存webpack.config.js中引用文件，bundle.js的文件会自动更新
+	watch: config.watch
 };

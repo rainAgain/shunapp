@@ -20,10 +20,12 @@ var pxtorem = require('postcss-pxtorem')({
 
 #### 添加route
 
-在`src/route-config.js`中添加对应的路由，对应的组件
+* 在`src/route-config.js`中添加对应的路由，对应的组件
+* 使用代码分割的写法引入页面，实现路由懒加载
 
 ```javascript
-import Home from './views/Home.vue';
+const Home = resolve => require(['./views/Home.vue'], resolve); //代码分割写法
+
 export default [
   { path: '/index', component: Home }
 ];
