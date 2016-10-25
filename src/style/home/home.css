@@ -20,7 +20,7 @@
   .left-sidebar{
     width: 100px;
     height: 600px;
-    background: $blue;
+    background: $sky;
     float: left;
   }
 }
