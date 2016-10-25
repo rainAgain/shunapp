@@ -1,7 +1,7 @@
 require('es6-promise').polyfill();  //es6 promise
 require('isomorphic-fetch');  //fetch
 
-import 'lib-flexible'; //flexible 布局
+import 'lib-flexible';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './route-config.js';

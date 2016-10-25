@@ -40,7 +40,8 @@
         });
       },
       changeCount () {
-        this.$store.dispatch('increaseCount', 4);
+        this.$router.push('/index');
+        //this.$store.dispatch('increaseCount', 4);
       }
     },
     components: {

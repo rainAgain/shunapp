@@ -2,7 +2,6 @@
 @import '../common/mixins.css';
 
 .home {
-  font-size: 20Px;
   width: 750px;
   .main {
     width: 550px;

@@ -1,4 +1,4 @@
-import Home from './views/Home.vue';
+const Home = resolve => require(['./views/Home.vue'], resolve); //代码分割写法
 
 export default [
   { path: '/', component: Home },

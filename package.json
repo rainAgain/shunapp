@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 127.0.0.1 --port 9090 --inline --hot",
-    "build": "webpack -p --progress --colors",
+    "dev": "NODE_ENV=dev webpack-dev-server --host 127.0.0.1 --port 9090 --inline --hot",
+    "build": "rm -rf build && NODE_ENV=pro webpack -p --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
