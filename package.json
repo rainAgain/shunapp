@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=dev webpack-dev-server --host 0.0.0.0 --port 9090 --inline --hot",
+    "dev:win": "set NODE_ENV=dev&&webpack-dev-server --host 0.0.0.0 --port 9090 --inline --hot",
     "build": "rm -rf build && NODE_ENV=pro webpack -p --progress --colors",
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
