@@ -6,7 +6,7 @@
     <div class="main">
       count: {{count}}
       <div class="">
-        <button @click="changeCount">clickme</button>
+        <button @click="leftClick">clickme</button>
       </div>
     </div>
     <div class="right">
@@ -32,11 +32,13 @@
     methods: {
       leftClick () {
         const opts = {
-          url: 'https://cnodejs.org/api/v1/topics',
+          url: 'http://127.0.0.1:4040/a',
           method: 'GET'
         };
-        this.$store.dispatch('fetchApi', opts).then(() => {
+        this.$store.dispatch('fetchApi', opts).then((data) => {
           console.log('fetch success');
+          window.data = data;
+          console.log(data);
         });
       },
       changeCount () {

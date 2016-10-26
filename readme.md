@@ -160,6 +160,37 @@ methods: {
   </script>
   ```
 
+#### mock data
+
+*  启动本地服务器`npm run server`
+
+* 在根目录下的`server.js`中添加假接口
+
+  ```javascript
+  var fake = require('local-fake');
+
+  fake.get('/a', function(req) {
+    /**
+     * req: {
+     *  method: request method
+     *  url： request url
+     *  query： request query
+     *  body： json parameters
+     *  header： request header
+     * }
+     */
+    return req; //according req，do somthing to return the fake data you want
+  });
+
+  fake.post('/b', function(req) {
+    return req;
+  });
+
+  fake.listen(4040);
+  ```
+
+  ​
+
 #### 什么时候使用store，什么时候使用props？
 
 props：当数据的变化总是发生在父级元素，并且影响子级元素，总是从上往下的时候
