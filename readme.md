@@ -61,10 +61,10 @@ export default new Vuex.Store({
 });
 ```
 
-* 在`src/store/actions`中添加对应页面的页面的文件夹，e.g. `src/veiws/home.vue`对应`src/store/actions/home`, 在文件夹中添加该页面的actions文件，比如叫`index.js`
+* 在`src/store/actions`中添加对应页面js文件，e.g. `src/veiws/home.vue`对应`src/store/actions/home.js`
 
 ```javascript
-/*src/store/actions/home/index.js*/
+/*src/store/actions/home.js*/
 export const increaseCount = ({ commit }, otherData) => {
   commit('INCREASE_COUNT', otherData);
 };
@@ -75,7 +75,7 @@ export const increaseCount = ({ commit }, otherData) => {
 ```javascript
 /*src/store/actions/index.js*/
 import fetchApi from './fetchApi/fetchApi.js';
-import * as home from './home/index.js'; //新增加的
+import * as home from './home.js'; //新增加的
 
 export default {
   fetchApi,
@@ -83,10 +83,10 @@ export default {
 };
 ```
 
-* 在`src/store/mutations`添加对应的文件夹文件`src/store/mutations/home/index.js`
+* 在`src/store/mutations`添加对应的文件夹文件`src/store/mutations/home.js`
 
 ```javascript
-/*src/store/mutations/home/index.js*/
+/*src/store/mutations/home.js*/
 export const INCREASE_COUNT = (state, data) => {
   state.count = data;
 };
@@ -95,7 +95,7 @@ export const INCREASE_COUNT = (state, data) => {
 
 ```javascript
 import * as fetchApi from './fetchApi/index.js';
-import * as home from './home/index.js'; //新增加的
+import * as home from './home.js'; //新增加的
 
 export default {
   ...fetchApi,
@@ -160,17 +160,39 @@ methods: {
   </script>
   ```
 
-#### mock data
+#### mixin
 
-*  启动本地服务器`npm run server`
-
-* 在根目录下的`server.js`中添加假接口
+* 在组件中添加mixin
 
   ```javascript
-  var fake = require('local-fake');
+    import mixin from '../mixin/index.js';
 
-  fake.get('/a', function(req) {
-    /**
+    export default {
+      mixins: [mixin],
+      data () {
+        return {};
+      },
+      computed: {
+        ...mapGetters([
+          'count'
+        ])
+      }
+    }
+  ```
+
+* 添加完后，组件会具有mixin中的方法，挂载在this上，可以通过`this.xxx()`直接调用。
+
+#### mock data
+
+*    启动本地服务器`npm run server`
+
+*    在根目录下的`server.js`中添加假接口
+
+     ```javascript
+     var fake = require('local-fake');
+
+     fake.get('/a', function(req) {
+       /**
      * req: {
      *  method: request method
      *  url： request url
@@ -179,6 +201,7 @@ methods: {
      *  header： request header
      * }
      */
+     ```
     return req; //according req，do somthing to return the fake data you want
   });
 
@@ -214,3 +237,5 @@ vue + webpack 的基础打包demo
 <!-- 以下是提示 -->
 
 (1)package.json中 --host 127.0.0.1 --port 9090可以设置域名和端口
+
+  ```

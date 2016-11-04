@@ -36,10 +36,8 @@ function fetchApi({
     return response.json();
   })
   .then((data) => {
-    console.log(data);
     return Promise.resolve(data);
   }).catch((err) => {
-    console.log(err);
     return Promise.reject(err);
   });
 }

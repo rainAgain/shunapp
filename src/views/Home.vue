@@ -1,4 +1,4 @@
-<style lang="css" src="../style/home/home.css"></style>
+<style lang="css" src="../style/home.css"></style>
 
 <template lang="html">
   <div class="home">
@@ -6,7 +6,8 @@
     <div class="main">
       count: {{count}}
       <div class="">
-        <button @click="leftClick">clickme</button>
+        <button @click="leftClick">leftClick</button>
+        <button @click="goBack">back</button>
       </div>
     </div>
     <div class="right">
@@ -18,8 +19,10 @@
 <script>
   import LeftSidebar from '../components/home/leftSidebar.vue';
   import { mapGetters } from 'vuex';
+  import mixin from '../mixin/index.js';
 
   export default {
+    mixins: [mixin],
     data () {
       return {};
     },
@@ -35,15 +38,9 @@
           url: 'http://127.0.0.1:4040/a',
           method: 'GET'
         };
-        this.$store.dispatch('fetchApi', opts).then((data) => {
-          console.log('fetch success');
-          window.data = data;
+        this.fetchApi(opts).then((data) => {
           console.log(data);
         });
-      },
-      changeCount () {
-        this.$router.push('/index');
-        //this.$store.dispatch('increaseCount', 4);
       }
     },
     components: {

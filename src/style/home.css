@@ -1,5 +1,5 @@
-@import '../common/variables.css';
-@import '../common/mixins.css';
+@import './common/variables.css';
+@import './common/mixins.css';
 
 .home {
   font-size: 40px;

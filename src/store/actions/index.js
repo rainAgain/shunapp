@@ -1,5 +1,5 @@
-import fetchApi from './fetchApi/fetchApi.js';
-import * as home from './home/index.js';
+import fetchApi from './fetchApi.js';
+import * as home from './home.js';
 
 export default {
   fetchApi,
