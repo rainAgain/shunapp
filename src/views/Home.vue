@@ -2,7 +2,7 @@
 
 <template lang="html">
   <div class="home">
-    <left-sidebar></left-sidebar>
+    <!--<left-sidebar></left-sidebar>
     <div class="main">
       count: {{count}}
       <div class="">
@@ -12,12 +12,15 @@
     </div>
     <div class="right">
       right
-    </div>
+    </div>-->
+    <goods-list></goods-list>
 	</div>
 </template>
 
 <script>
   import LeftSidebar from '../components/home/leftSidebar.vue';
+  import GoodsList from '../components/common/GoodsList.vue';
+
   import { mapGetters } from 'vuex';
   import mixin from '../mixin/index.js';
 
@@ -44,7 +47,8 @@
       }
     },
     components: {
-      LeftSidebar
+      LeftSidebar,
+      GoodsList
     }
   };
 </script>

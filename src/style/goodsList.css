@@ -1,0 +1,37 @@
+@import './common/variables.css';
+@import './common/mixins.css';
+
+.goods-list{
+    ul{
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction:row ;
+        flex-wrap:wrap;
+        padding:10px;
+        li{
+            padding-right:10px;
+            width: 33.33%;
+            img{
+                display:block;
+            }
+            .red{
+                color:$red;
+                }
+            .fz-12{
+            }
+            .pd-t-15{
+                padding-top: 15px;
+            }
+            .clamp{
+                @mixin clamp2;
+            }
+            .text-left{
+                text-align: left;
+            }
+            .float-right{
+                float: right;
+            }
+        }
+    }
+    
+}
