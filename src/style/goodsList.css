@@ -1,37 +1,43 @@
 @import './common/variables.css';
 @import './common/mixins.css';
 
-.goods-list{
-    ul{
-        display: -webkit-flex; /* Safari */
-        display: flex;
-        flex-direction:row ;
-        flex-wrap:wrap;
-        padding:10px;
-        li{
-            padding-right:10px;
-            width: 33.33%;
-            img{
-                display:block;
-            }
-            .red{
-                color:$red;
-                }
-            .fz-12{
-            }
-            .pd-t-15{
-                padding-top: 15px;
-            }
-            .clamp{
-                @mixin clamp2;
-            }
-            .text-left{
-                text-align: left;
-            }
-            .float-right{
-                float: right;
-            }
-        }
+.goods-list {
+  ul {
+    font-size: 24px;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    padding: 10px;
+    li {
+      /**
+      * 为什么是236.66px？
+      * 假设设计稿是750px宽度，你给了边距为10，从左到右一共4个边距，就是40px，所以一个li是(750-40)/3px
+      * 在转rem的情况下，单位就没必要用百分比了， 统一为px
+      */
+      width: 236.66px;
+      /*第二个li 左右空开10px */
+      &:nth-child(2) {
+        margin: 0 10px;
+      }
+      img {
+        display: block;
+      }
+      .red {
+        color: $red;
+      }
+      .pd-t-15 {
+        padding-top: 15px;
+      }
+      .clamp {
+        @mixin clamp2;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .float-right {
+        float: right;
+      }
     }
-    
+  }
 }
