@@ -13,13 +13,15 @@
     <div class="right">
       right
     </div>-->
-    <goods-list></goods-list>
+    <!-- <goods-list></goods-list> -->
+    <Slider></Slider>
 	</div>
 </template>
 
 <script>
   import LeftSidebar from '../components/home/leftSidebar.vue';
   import GoodsList from '../components/common/GoodsList.vue';
+  import Slider from '../components/common/Slider.vue';
 
   import { mapGetters } from 'vuex';
   import mixin from '../mixin/index.js';
@@ -48,7 +50,8 @@
     },
     components: {
       LeftSidebar,
-      GoodsList
+      GoodsList,
+      Slider
     }
   };
 </script>
