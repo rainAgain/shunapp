@@ -1,23 +1,22 @@
-@import './common/variables.css';
-@import './common/mixins.css';
+@import './common/variables.scss';
+@import './common/mixins.scss';
 
 .home {
   font-size: 40px;
   width: 750px;
   .main {
-    width: 550px;
-    height: 600px;
-    background: lightblue;
     float: left;
+    height: 600px;
+    width: 550px;
   }
   .right {
     @mixin clear-fix;
     width: 100px;
     height: 600px;
-    background: lightpink;
+    background: $sky;
     float: left;
   }
-  .left-sidebar{
+  .left-sidebar {
     width: 100px;
     height: 600px;
     background: $sky;

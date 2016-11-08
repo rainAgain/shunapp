@@ -1,12 +1,11 @@
-@import './common/variables.css';
-@import './common/mixins.css';
+@import './common/variables.scss';
+@import './common/mixins.scss';
 
 .goods-list {
   ul {
     font-size: 24px;
-    display: -webkit-flex; /* Safari */
     display: flex;
-    flex-direction: row ;
+    flex-direction: row;
     flex-wrap: wrap;
     padding: 10px;
     li {

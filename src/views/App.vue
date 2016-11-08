@@ -1,4 +1,4 @@
-<style lang="css" src="../style/common/preset.css"></style>
+<style src="../style/common/preset.scss"></style>
 
 <template lang="html">
   <div id="app">

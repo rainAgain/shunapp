@@ -1,4 +1,4 @@
-<style lang="css" src="../../style/goodsList.css"></style>
+<style src="../../style/goodsList.scss"></style>
 
 <template lang="html">
     <div class="goods-list">

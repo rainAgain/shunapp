@@ -15,7 +15,7 @@ var config = {
   plugins: [
     //生成html插件
     new HtmlWebpackPlugin({
-      title: '爽爽购',
+      title: '顺顺购',
       filename: 'index.html',
       template: 'src/index.html',
       inject: true

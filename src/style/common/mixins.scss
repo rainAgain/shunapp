@@ -2,17 +2,18 @@
  * 清除浮动
  */
 @define-mixin clear-fix {
-	&:after{
-		content:"";
-		width: 0;
-		height: 0;
-		display: block;
-		visibility: hidden;
-		clear: both;
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
 	}
 }
+
 @define-mixin clear {
-	&{
+  & {
     overflow: hidden;
 	}
 }
@@ -44,11 +45,12 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
 /*显示两行*/
-@define-mixin clamp2{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+@define-mixin clamp2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

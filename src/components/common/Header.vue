@@ -12,6 +12,6 @@
       return {
         head: 'this is header aaa'
       };
-    } 
+    }
   };
 </script>
