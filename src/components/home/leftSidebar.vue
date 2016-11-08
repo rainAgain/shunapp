@@ -7,7 +7,7 @@
     data() {
       return {
         content: 'left side bar'
-      }
+      };
     }
-  }
+  };
 </script>
