@@ -22,7 +22,7 @@ var config = {
     }),
     //提取公共文件插件
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor'],
+      names: ['js/vendor'],
       minChunks: Infinity
     })
   ]
@@ -43,12 +43,13 @@ if (process.env.NODE_ENV === 'pro') { //生产环境
 
 module.exports = {
 	entry: {
-    'vendor': ['lib-flexible', 'es6-promise', 'vue', 'vue-router', 'vuex'],  //提出来，作为一个单独文件
-    'index': './src/main.js' //入口
+    'js/vendor': ['lib-flexible', 'es6-promise', 'vue', 'vue-router', 'vuex'],  //提出来，作为一个单独文件
+    'js/index': './src/main.js' //入口
   },
 	//编译打包后的输出
 	output: {
 		path: __dirname+'/build/',
+    chunkFilename: '[name].[hash].js',
 		filename: '[name].[hash].js'
 	},
 	debug: config.debug,
