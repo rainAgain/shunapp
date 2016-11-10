@@ -58,7 +58,7 @@ module.exports = {
 	devtool: config.devtool,
 	module: {
 		loaders: [
-      {test: /\.(gif|jpg|png|woff|svg|eot|ttf)$/, loader: 'url-loader?limit=50000'},
+      {test: /\.(gif|jpg|png|woff|svg|eot|ttf)$/, loader: 'url-loader?limit=10000'}, //10kb
 			{test: /\.js$/, loader: 'babel', exclude: /node_modules/},
 			{test: /\.vue$/, loader:'vue'}
 		]

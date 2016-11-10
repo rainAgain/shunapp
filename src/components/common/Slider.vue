@@ -9,6 +9,7 @@
 
   .slide1 {
     background-color: #0089dc;
+    background-image: url('../../imgs/timg.jpg');
     color: #fff;
   }
 
