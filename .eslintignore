@@ -1,3 +1,4 @@
 webpack.config.js
 server.js
 test
+static.server.js

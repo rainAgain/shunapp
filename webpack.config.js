@@ -43,25 +43,29 @@ if (process.env.NODE_ENV === 'pro') { //生产环境
 
 module.exports = {
 	entry: {
-    vendor: ['lib-flexible', 'es6-promise', 'vue', 'vue-router', 'vuex'],  //提出来，作为一个单独文件
-    main: './src/main.js' //入口
+    'vendor': ['lib-flexible', 'es6-promise', 'vue', 'vue-router', 'vuex'],  //提出来，作为一个单独文件
+    'index': './src/main.js' //入口
   },
 	//编译打包后的输出
 	output: {
 		path: __dirname+'/build/',
 		filename: '[name].[hash].js'
 	},
-
 	debug: config.debug,
-
   //开发环境推荐：‘cheap-module-eval-source-map’，生产环境推荐：’cheap-module-source-map’
 	devtool: config.devtool,
 	module: {
-		loaders: [
-      {test: /\.(gif|jpg|png|woff|svg|eot|ttf)$/, loader: 'url-loader?limit=10000'}, //10kb
-			{test: /\.js$/, loader: 'babel', exclude: /node_modules/},
-			{test: /\.vue$/, loader:'vue'}
-		]
+		loaders: [{
+      test: /\.(gif|jpg|png|woff|svg|eot|ttf)$/,
+      loader: 'url-loader?limit=1&name=imgs/[name].[hash].[ext]'
+    }, {
+      test: /\.js$/,
+      loader: 'babel',
+      exclude: /node_modules/
+    }, {
+      test: /\.vue$/,
+      loader:'vue'
+    }]
 	},
 	resolve: {
 		extensions: ['','.js','.vue','html'],

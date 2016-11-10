@@ -7,7 +7,8 @@
     "start": "NODE_ENV=dev webpack-dev-server --host 0.0.0.0 --port 9090 --inline --hot",
     "start:win": "set NODE_ENV=dev&&webpack-dev-server --host 0.0.0.0 --port 9090 --inline --hot",
     "build": "rm -rf build && NODE_ENV=pro webpack -p --progress --colors",
-    "server": "nodemon test/server.js",
+    "server:api": "nodemon test/server.js",
+    "server:build": "node static.server.js",
     "lint:js": "eslint src --ext .js,.vue",
     "lint:sass": "sass-lint 'src/**/*.scss' -v -q"
   },
@@ -33,6 +34,7 @@
     "html-webpack-plugin": "^2.22.0",
     "local-fake": "^1.0.0",
     "node-sass": "^3.11.2",
+    "node-static": "^0.7.9",
     "nodemon": "^1.11.0",
     "postcss": "^5.2.5",
     "postcss-pxtorem": "^3.3.1",
